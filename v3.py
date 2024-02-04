@@ -9,19 +9,16 @@ def ISP(a):
         if a % i == 0 and a != 2:
             return 0
     return a
-#def MAXP2(a):
-    # for i in range(2,int(sqrt(a))):
-    #     if a % i == 0:
-    #         return a
-    # return 0
-#def SQRTNOLIB(a):
-    #later
+# Работает
 def P5(a):
     b = 1
-    for i in range(2,int(sqrt(a))):
-        if a % i == 0 and a % 5 != 0:
-            b = b*a
+    c = str(a)
+    for i in c:
+        if int(i) % 5 != 0:
+            b = b*int(i)
     return b
+# Работает
+
 def MAXPNT( a):
     for i in range(2,int(sqrt(a))):
         if a % i == 0 and a % 2 != 0 and MAXP(a) != 0   :
@@ -37,6 +34,10 @@ def ATR(a):
 def NOD(a):
     return MAXPNT(a)*ATR(a)
 
-a = int(input("Введите число: "))
-a = MAXP(a)
-print("Максимальный простой делитель числа: ", a)
+# a = int(input("Введите число: "))
+# a = MAXP(a)
+# print("Максимальный простой делитель числа: ", a)
+# a = int(input("Введите число: "))
+# a = P5(a)
+# print("Произведение элементов не кратных 5: ", a)
+
