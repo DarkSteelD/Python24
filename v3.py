@@ -1,3 +1,4 @@
+import math
 #v3
 def MAXP(a):
     for i in range(a,1,-1):
@@ -20,9 +21,9 @@ def P5(a):
 # Работает
 
 def MAXPNT( a):
-    for i in range(a-1,2):
+    for i in range(a-1,2,-1):
         if a % i == 0 and a % 2 != 0 and MAXP(a) != 0   :
-            return a
+            return i
     return 0
 def PE(a):
     b = 1
@@ -32,7 +33,7 @@ def PE(a):
     return b
 
 def NOD(a):
-    return MAXPNT(a)*PE(a)
+    return math.gcd(MAXPNT(a),PE(a))
 
 # a = int(input("Введите число: "))
 # a = MAXP(a)
@@ -41,3 +42,8 @@ def NOD(a):
 # a = P5(a)
 # print("Произведение элементов не кратных 5: ", a)
 
+a = int(input("Введите число: "))
+print(MAXPNT(a), " ", PE(a))
+a = NOD(a)
+
+print("НОД максимального нечетного непростого делителя числа и произведения цифр данного числа : ", a)
