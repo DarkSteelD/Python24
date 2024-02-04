@@ -6,4 +6,5 @@ for b in a1:
     if(len(b)%2==0):
          i+=1
 
+
 print(i)
