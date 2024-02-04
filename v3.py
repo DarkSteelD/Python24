@@ -20,19 +20,19 @@ def P5(a):
 # Работает
 
 def MAXPNT( a):
-    for i in range(2,int(sqrt(a))):
+    for i in range(a-1,2):
         if a % i == 0 and a % 2 != 0 and MAXP(a) != 0   :
             return a
     return 0
-def ATR(a):
-    b = string(a)
-    a = 1
-    for i in range(0,b.size()):
-        a *= int(b[i])
-    return a
+def PE(a):
+    b = 1
+    c = str(a)
+    for i in c:
+        b = b*int(i)
+    return b
 
 def NOD(a):
-    return MAXPNT(a)*ATR(a)
+    return MAXPNT(a)*PE(a)
 
 # a = int(input("Введите число: "))
 # a = MAXP(a)
