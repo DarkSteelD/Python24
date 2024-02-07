@@ -1,5 +1,5 @@
 import re
-b = input("Количество строк : ")
+b = int(input("Количество строк : "))
 a1 = []
 for i in range(0,b):
     a = input("Введите строку: ")
