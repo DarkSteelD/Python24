@@ -2,6 +2,6 @@
 # символы латиницы.
 import re
 a = input("Введите строку: ")
-a1 = re.findall ('[a-z]{1}', a)
+a1 = re.findall (r'[a-z]{1}', a)
 
 print(len(a1))

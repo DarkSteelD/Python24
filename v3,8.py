@@ -2,6 +2,6 @@
 # целых чисел.
 import re
 a = input("Введите строку: ")
-a1 = re.findall ('[0-1]{1}', a)
+a1 = re.findall (r'[0-1]{1}', a)
 
 print(min(a1))
