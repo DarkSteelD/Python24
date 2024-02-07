@@ -6,4 +6,4 @@ for i in range(0,b):
     a1.append(a)
 a1.sort()
 
-print(" " + a1)
+print(" " + str(a1))
