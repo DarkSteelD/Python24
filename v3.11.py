@@ -11,10 +11,11 @@ def order1(k):
                 order[i]=1
             else:
                 order[i] =  order[i]+1
-    return order.get(k[0], ord(k[0]))
+    return order.get(k[0])
 d = {}
 a = input("Введите строку: ")
 order1(a)
 a1 = a.split()
+print(str(a1))
 a1.sort(key = order1)
 print(str(a1))
