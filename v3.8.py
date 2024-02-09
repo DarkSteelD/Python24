@@ -1,10 +1,7 @@
-import random
+#  Дана строка. Необходимо найти минимальное из имеющихся в ней
+# целых чисел.
+import re
 a = input("Введите строку: ")
-a1 = a.split()
-i = 0
-for b in a1:
-    if(len(b)%2==0):
-         i+=1
+a1 = re.findall (r'[0-1]{1}', a)
 
-
-print(i)
+print(min(a1))
