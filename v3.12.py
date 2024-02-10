@@ -22,7 +22,7 @@ def delta(x,s):
     if not orderINS:
         return 0
     print(abs(orderINS[x] / len(s) - Aorder.get(x, 0)), " - ",x)
-    return abs(orderINS[x] / len(s) - Aorder.get(x, 0))**2 # Одна строчка изменений((()))
+    return abs(orderINS[x] / len(s) - Aorder.get(x, 0))**2 # Одна строчка изменений(((
 def sort(s):
     return ''.join(sorted(s, key=lambda x: delta(x,s)))
 
