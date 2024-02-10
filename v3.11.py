@@ -16,16 +16,16 @@ def order(s):
     for c in s.lower():
             f[c] = f.get(c, 0) + 1
     return f
-def delta(s):
-    order = order(s)
-    if not order:
+def delta(x,s):
+    orderINS = order(s)
+    #print(orderINS)
+    if not orderINS:
         return 0
-    return abs(frequency[max(order, key=order.get)] / len(s) - alphabet_frequencies.get(max(order, key=order.get), 0))
+    print(abs(orderINS[x] / len(s) - Aorder.get(x, 0)), " - ",x)
+    return abs(orderINS[x] / len(s) - Aorder.get(x, 0))
+def sort(s):
+    return ''.join(sorted(s, key=lambda x: delta(x,s)))
 
-d = {}
+
 a = input("Введите строку: ")
-order1(a)
-a1 = a.split()
-print(str(a1))
-a1.sort(key = order1)
-print(str(a1))
+print(sort(a))
