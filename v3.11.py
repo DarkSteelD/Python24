@@ -16,6 +16,12 @@ def order(s):
     for c in s.lower():
             f[c] = f.get(c, 0) + 1
     return f
+def delta(s):
+    order = order(s)
+    if not order:
+        return 0
+    return abs(frequency[max(order, key=order.get)] / len(s) - alphabet_frequencies.get(max(order, key=order.get), 0))
+
 d = {}
 a = input("Введите строку: ")
 order1(a)
