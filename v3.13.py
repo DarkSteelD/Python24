@@ -8,6 +8,11 @@ def pairs(s):
         elif s[i] in soglas and s[i+1] in glas:
             sg += 1
     return gs, sg
+def sort(s):
+    def difference(c):
+        gs, sg = pairs(c)
+        return abs(gs - sg)  
+    return sorted(s, key=difference)
 a = input("Введите строку: ")
-a1 = a.split(',')
-print(a1)
+a1 = a.split('.')
+print(sort(a1))
