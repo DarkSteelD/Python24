@@ -103,6 +103,29 @@ def is_intersect(t1, t2):
                     t1.bottom_right[1] > t2.top_left[1] or  
                     t1.top_left[1] < t2.bottom_right[1]) 
     return False
+
+def is_intersecting(a,b,c,d):
+    x1, y1 = a
+    x2, y2 = b
+    x3, y3 = c
+    x4, y4 = d
+    if x2 == x1:
+        f = (0,x1)
+    else:
+        a = (y2 - y1) / (x2 - x1)
+        b = y1 - a * x1
+        f = (a,b)
+    if x3 == x4:
+        h = (0,x3)
+    else:
+        a = (y4 - y3) / (x4 - x3)
+        b = y3 - a * x3
+        h = (a,b)
+    if h[1]-f[1] == 0 and h[0]-f[0]==0:
+        h
+    elif:
+        x = -(h[1]-f[1])/(h[0]-f[0])
+    
 polygos = []
 a = int(input("Введите количетство фигур : "))
 try:
