@@ -42,50 +42,80 @@ class Rectangle(Shape):
         return width * height
 
 class Pentagon(Shape):
-    def __init__(self, identifier, center, radius):
+    def __init__(self, identifier, *args):
         super().__init__(identifier)
-        self._center = center
-        self._radius = radius
+        if len(args) != 5 or not all(len(dot) == 2 for dot in args):
+            raise ValueError("Для каждой вершины требуется две координаты и всего 5 вершин")
+        self._dots = list(args)
+
+        
 
     @property
-    def center(self):
-        return self._center
+    def dots(self):
+        return self._dots
 
-    @center.setter
-    def center(self, value):
+    def set_dot(self, index, value):
         if len(value) == 2:
-            self._center = value
+            self._dots[index] = value
         else:
             raise ValueError("Требуется две координаты")
-
-    @property
-    def radius(self):
-        return self._radius
-
-    @radius.setter
-    def radius(self, value):
-        if value > 0:
-            self._radius = value
-        else:
-            raise ValueError("Радиус должен быть положительным")
-
-    def area(self):
-        side = 2 * self._radius * math.sin(math.pi / 5)
-        return 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side ** 2
+    def get_dot(self, index):
+        return self._dots[index]
+    def buttom_right(self):
+        return max(self.dots, key=lambda dot: dot[0])[0]  , min(self.dots, key=lambda dot: dot[1])[1] 
+    def top_left(self):
+        return min(self.dots, key=lambda dot: dot[0])[0] , max(self.dots, key=lambda dot: dot[1])[1]
     
 def is_include(t1, t2):
     if isinstance(t1, Rectangle) and isinstance(t2, Rectangle):
         return (t1.top_left[0] <= t2.top_left[0] and
                 t1.top_left[1] >= t2.top_left[1] and
                 t1.bottom_right[0] >= t2.bottom_right[0] and
-                t1.bottom_right[1] <= t2.bottom_right[1])
+                t1.bottom_right[1] <= t2.bottom_right[1]) 
     
     if isinstance(t1, Rectangle) and isinstance(t2, Pentagon):
-        pentagon_bounds = (
-            (t2.center[0] - t2.radius, t2.center[1] + t2.radius),  
-            (t2.center[0] + t2.radius, t2.center[1] - t2.radius)   
-        )
-        return (t1.top_left[0] <= pentagon_bounds[0][0] and
-                t1.top_left[1] >= pentagon_bounds[0][1] and
-                t1.bottom_right[0] >= pentagon_bounds[1][0] and
-                t1.bottom_right[1] <= pentagon_bounds[1][1])
+        return (t1.top_left[0] <= t2.top_left[0] and
+                t1.top_left[1] >= t2.top_left[1] and
+                t1.bottom_right[0] >= t2.bottom_right[0] and
+                t1.bottom_right[1] <= t2.bottom_right[1])
+    if isinstance(t1, Pentagon) and isinstance(t2, Pentagon):
+        return (t1.top_left[0] <= t2.top_left[0] and
+                t1.top_left[1] >= t2.top_left[1] and
+                t1.bottom_right[0] >= t2.bottom_right[0] and
+                t1.bottom_right[1] <= t2.bottom_right[1])
+    return False
+
+def is_intersect(t1, t2):
+    if isinstance(t1, Rectangle) and isinstance(t2, Rectangle):
+        return not (t1.bottom_right[0] < t2.top_left[0] or  
+                    t1.top_left[0] > t2.bottom_right[0] or  
+                    t1.bottom_right[1] > t2.top_left[1] or  
+                    t1.top_left[1] < t2.bottom_right[1]) 
+    
+    if isinstance(t1, Rectangle) and isinstance(t2, Pentagon):
+        return not (t1.bottom_right[0] < t2.top_left[0] or  
+                    t1.top_left[0] > t2.bottom_right[0] or  
+                    t1.bottom_right[1] > t2.top_left[1] or  
+                    t1.top_left[1] < t2.bottom_right[1]) 
+    if isinstance(t1, Pentagon) and isinstance(t2, Pentagon):
+        return not (t1.bottom_right[0] < t2.top_left[0] or  
+                    t1.top_left[0] > t2.bottom_right[0] or  
+                    t1.bottom_right[1] > t2.top_left[1] or  
+                    t1.top_left[1] < t2.bottom_right[1]) 
+    return False
+polygos = []
+a = int(input("Введите количетство фигур : "))
+
+for _ in range(a):
+    i = [int(f) for f in input("Введите точки : ").split()]
+    if(len(i)==4):
+        r =  Rectangle(_,(i[0],i[1]),(i[2],i[3]))
+        polygos.append(r)
+    elif(len(i)==10):
+        r =  Pentagon(_,(i[0],i[1]),(i[2],i[3]),(i[4],i[5]),(i[6],i[7]),(i[8],i[9]))
+        polygos.append(r)
+a = input("Какие фигуры сравнить? ")        
+
+i = [int(f) for f in a.split()]
+print(f"Фигура {i[0]} пересекает {i[1]} {is_intersect(polygos[i[0]-1],polygos[i[1]-1])}")
+print(f"Фигура {i[0]} включает {i[1]} {is_include(polygos[i[0]-1],polygos[i[1]-1])}")
