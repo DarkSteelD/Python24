@@ -72,3 +72,20 @@ class Pentagon(Shape):
     def area(self):
         side = 2 * self._radius * math.sin(math.pi / 5)
         return 0.25 * math.sqrt(5 * (5 + 2 * math.sqrt(5))) * side ** 2
+    
+def is_include(t1, t2):
+    if isinstance(t1, Rectangle) and isinstance(t2, Rectangle):
+        return (t1.top_left[0] <= t2.top_left[0] and
+                t1.top_left[1] >= t2.top_left[1] and
+                t1.bottom_right[0] >= t2.bottom_right[0] and
+                t1.bottom_right[1] <= t2.bottom_right[1])
+    
+    if isinstance(t1, Rectangle) and isinstance(t2, Pentagon):
+        pentagon_bounds = (
+            (t2.center[0] - t2.radius, t2.center[1] + t2.radius),  
+            (t2.center[0] + t2.radius, t2.center[1] - t2.radius)   
+        )
+        return (t1.top_left[0] <= pentagon_bounds[0][0] and
+                t1.top_left[1] >= pentagon_bounds[0][1] and
+                t1.bottom_right[0] >= pentagon_bounds[1][0] and
+                t1.bottom_right[1] <= pentagon_bounds[1][1])
