@@ -93,15 +93,9 @@ def is_intersect(t1, t2):
                     t1.top_left[1] < t2.bottom_right[1]) 
     
     if isinstance(t1, Rectangle) and isinstance(t2, Pentagon):
-        return not (t1.bottom_right[0] < t2.top_left[0] or  
-                    t1.top_left[0] > t2.bottom_right[0] or  
-                    t1.bottom_right[1] > t2.top_left[1] or  
-                    t1.top_left[1] < t2.bottom_right[1]) 
+        return not () 
     if isinstance(t1, Pentagon) and isinstance(t2, Pentagon):
-        return not (t1.bottom_right[0] < t2.top_left[0] or  
-                    t1.top_left[0] > t2.bottom_right[0] or  
-                    t1.bottom_right[1] > t2.top_left[1] or  
-                    t1.top_left[1] < t2.bottom_right[1]) 
+        return not () 
     return False
 
 def is_intersecting(a,b,c,d):
@@ -109,6 +103,7 @@ def is_intersecting(a,b,c,d):
     x2, y2 = b
     x3, y3 = c
     x4, y4 = d
+    g = ()
     if x2 == x1:
         f = (0,x1)
     else:
@@ -121,10 +116,15 @@ def is_intersecting(a,b,c,d):
         a = (y4 - y3) / (x4 - x3)
         b = y3 - a * x3
         h = (a,b)
-    if h[1]-f[1] == 0 and h[0]-f[0]==0:
-        h
-    elif:
+        #Дальше ищем точку пересечения
+    if  h[0]-f[0]==0:
+        return False
+    else:
         x = -(h[1]-f[1])/(h[0]-f[0])
+        y = x*h[0] + h[1]
+        g =(x,y)
+    return x1 <= x <= x2 and x3 <= x <= x4 and y1 <= y <= y2 and y3 <= y <= y4
+    
     
 polygos = []
 a = int(input("Введите количетство фигур : "))
