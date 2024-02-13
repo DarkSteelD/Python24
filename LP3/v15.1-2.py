@@ -36,6 +36,8 @@ class Rectangle(Shape):
         else:
             self._bottom_right = value
 
+    def dots():
+        return self._top_left ,  self._bottom_right , (self._top_left[0], self._bottom_right[1]), ( self._bottom_right[0], self._top_left[1])
     def area(self):
         width = self._bottom_right[0] - self._top_left[0]
         height = self._top_left[1] - self._bottom_right[1]
