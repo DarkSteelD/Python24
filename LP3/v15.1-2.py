@@ -152,8 +152,8 @@ try:
         elif(len(i)==10):
             r =  Pentagon(_,(i[0],i[1]),(i[2],i[3]),(i[4],i[5]),(i[6],i[7]),(i[8],i[9]))
         polygos.append(r)
-        a = input("Какие фигуры сравнить? ")        
 
+    a = input("Какие фигуры сравнить? ")        
     i = [int(f) for f in a.split()]
     print(f"Фигура {i[0]} пересекает {i[1]} {is_intersect(polygos[i[0]-1],polygos[i[1]-1])}")
     print(f"Фигура {i[0]} включает {i[1]} {is_include(polygos[i[0]-1],polygos[i[1]-1])}")
