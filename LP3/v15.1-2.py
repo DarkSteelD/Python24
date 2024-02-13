@@ -1,5 +1,5 @@
 import math
-
+import  
 class Shape:
     def __init__(self, identifier):
         self.identifier = identifier
@@ -95,29 +95,43 @@ def is_intersect(t1, t2):
                     t1.top_left[1] < t2.bottom_right[1]) 
     
     if isinstance(t1, Rectangle) and isinstance(t2, Pentagon):
-        return not () 
+        first_dots = list(itertools.combinations(t1.dots, 2))
+        second_dots = list(itertools.combinations(t1.dots, 2))
+        Flag = False
+        for a in first_dots:
+            for b in second_dots:
+                Flag = Flag or is_intersecting(a,b)
+        return Flag
+
+                
     if isinstance(t1, Pentagon) and isinstance(t2, Pentagon):
-        return not () 
+        first_dots = list(itertools.combinations(t1.dots, 2))
+        second_dots = list(itertools.combinations(t1.dots, 2))
+        Flag = False
+        for a in first_dots:
+            for b in second_dots:
+                Flag = Flag or is_intersecting(a,b)
+        return Flag
     return False
 
-def is_intersecting(a,b,c,d):
-    x1, y1 = a
-    x2, y2 = b
-    x3, y3 = c
-    x4, y4 = d
+def is_intersecting(a,b):
+    x1, y1 = a[0]
+    x2, y2 = a[1]
+    x3, y3 = b[0]
+    x4, y4 = b[1]
     g = ()
     if x2 == x1:
         f = (0,x1)
     else:
-        a = (y2 - y1) / (x2 - x1)
-        b = y1 - a * x1
-        f = (a,b)
+        alpha = (y2 - y1) / (x2 - x1)
+        betha = y1 - a * x1
+        f = (alpha,betha)
     if x3 == x4:
         h = (0,x3)
     else:
-        a = (y4 - y3) / (x4 - x3)
-        b = y3 - a * x3
-        h = (a,b)
+        alpha = (y4 - y3) / (x4 - x3)
+        betha = y3 - a * x3
+        h = (alpha,betha)
         #Дальше ищем точку пересечения
     if  h[0]-f[0]==0:
         return False
