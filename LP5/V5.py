@@ -5,6 +5,6 @@
 # (Zip Code).
 import re
 a = input("Введите строку: ")
-a1 = re.match(r'\d{4}', a)
+a = re.match(r'\d{5}', a)
 
-print(min(a1))
+print(True if a!= None else False)
