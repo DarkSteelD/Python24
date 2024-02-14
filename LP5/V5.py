@@ -8,3 +8,8 @@ def check():
     a = input("Введите строку: ")
     a = re.match(r'\d{5}', a)
     print(True if a!= None else False)
+def Code():
+    a = input("Введите строку: ")
+    a = re.match(r'\d{5}', a)
+    print(a.group(0) if a!= None else "Error")
+Code()
