@@ -13,3 +13,4 @@ def Code():
     a = re.match(r'\d{5}', a)
     print(a.group(0) if a!= None else "Error")
 Code()
+сheck()
