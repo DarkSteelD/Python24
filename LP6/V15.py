@@ -1,6 +1,6 @@
 import sqlite3
 try:
-    conn = sqlite3.connect('db.sqlite')
+    conn = sqlite3.connect('C:\\Users\\DarkStell\\Documents\\GitHub\\Python24\\LP6\\db.sqlite')
     cursor = conn.cursor()
     cursor.execute('''CREATE TABLE IF NOT EXISTS Developers (
                         ID INTEGER PRIMARY KEY,
@@ -43,6 +43,10 @@ try:
     cursor.execute('''INSERT INTO Licenses (LicenseType, SoftwareID, ExpiryDate) VALUES ('GPL', 1, '2026-12-31')''')
     cursor.execute('''INSERT INTO Licenses (LicenseType, SoftwareID, ExpiryDate) VALUES ('BSD', 2, '2029-06-30')''')
     conn.commit()
+    cursor.execute('''SELECT * FROM Developers LIMIT 10''')
+    rows = cursor.fetchall()
+    for row in rows:
+        print(row)
     conn.close()
 except sqlite3.Error as e:
     conn.rollback()
