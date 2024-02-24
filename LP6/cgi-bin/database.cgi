@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!C:\Users\DarkStell\AppData\Local\Microsoft\WindowsApps\python.exe
 import cgi
 import sqlite3
 print("Content-type: text/html\n")
