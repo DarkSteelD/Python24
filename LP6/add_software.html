@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Software</title>
+</head>
+<body>
+    <h2>Add Software</h2>
+    <form action="/cgi-bin/add_software.cgi" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="version">Version:</label><br>
+        <input type="text" id="version" name="version" required><br>
+        <label for="developerId">Developer ID:</label><br>
+        <input type="number" id="developerId" name="developerId"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

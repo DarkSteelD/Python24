@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Company</title>
+</head>
+<body>
+    <h2>Add Company</h2>
+    <form action="/cgi-bin/add_company.cgi" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="licenses">Licenses ID:</label><br>
+        <input type="number" id="licenses" name="licenses"><br>
+        <label for="employees">Employees ID:</label><br>
+        <input type="number" id="employees" name="employees"><br>
+        <label for="projects">Projects ID:</label><br>
+        <input type="number" id="projects" name="projects"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

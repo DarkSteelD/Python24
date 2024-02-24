@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Developer</title>
+</head>
+<body>
+    <h2>Add Developer</h2>
+    <form action="/cgi-bin/add_developer.cgi" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country" required><br>
+        <label for="birth">Birth:</label><br>
+        <input type="date" id="birth" name="birth" required><br>
+        <label for="salary">Salary:</label><br>
+        <input type="number" id="salary" name="salary"><br>
+        <label for="lastCompany">Last Company:</label><br>
+        <input type="text" id="lastCompany" name="lastCompany"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

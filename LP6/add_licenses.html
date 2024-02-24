@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add License</title>
+</head>
+<body>
+    <h2>Add License</h2>
+    <form action="/cgi-bin/add_license.cgi" method="post">
+        <label for="licenseType">License Type:</label><br>
+        <input type="text" id="licenseType" name="licenseType" required><br>
+        <label for="softwareId">Software ID:</label><br>
+        <input type="number" id="softwareId" name="softwareId" required><br>
+        <label for="expiryDate">Expiry Date:</label><br>
+        <input type="date" id="expiryDate" name="expiryDate" required><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
