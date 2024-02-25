@@ -20,7 +20,7 @@ def count_fuel_stations(data):
 
 def main():
     with open('C:\\Users\\DarkStell\\Documents\\GitHub\\Python24\\LP8\\file.txt', 'w',encoding='utf-8') as file:
-        tree = ET.parse('C:\\Users\\DarkStell\\Documents\\GitHub\\Python24\\LP8\\16 - 2.osm')
+        tree = ET.parse('C:\\Users\\DarkStell\\Documents\\GitHub\\Python24\\LP8\\16.osm') # - 2
         root = tree.getroot()
         fuel_stations_by_company, all_fuel_stations = count_fuel_stations(root)
         print("Количество заправок по каждой фирме:")
