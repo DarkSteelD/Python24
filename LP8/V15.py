@@ -19,17 +19,16 @@ def count_fuel_stations(data):
     return fuel_stations_by_company, sorted(set(fuel_stations))
 
 def main():
-    with open('C:\\Users\\DarkStell\\Documents\\GitHub\\Python24\\LP8\\file.txt', 'w',encoding='utf-8') as file:
-        tree = ET.parse('C:\\Users\\DarkStell\\Documents\\GitHub\\Python24\\LP8\\16.osm') # - 2
-        root = tree.getroot()
-        fuel_stations_by_company, all_fuel_stations = count_fuel_stations(root)
-        print("Количество заправок по каждой фирме:")
-        for company, count in fuel_stations_by_company.items():
-            print(f"{company}: {count}")
-        
-        print("\nОбщий список заправок в алфавитном порядке:")
-        for station in all_fuel_stations:
-            print(station)
+    tree = ET.parse('C:\\Users\\DarkStell\\Documents\\GitHub\\Python24\\LP8\\16.osm') # - 2
+    root = tree.getroot()
+    fuel_stations_by_company, all_fuel_stations = count_fuel_stations(root)
+    print("Количество заправок по каждой фирме:")
+    for company, count in fuel_stations_by_company.items():
+        print(f"{company}: {count}")
+    
+    print("\nОбщий список заправок в алфавитном порядке:")
+    for station in all_fuel_stations:
+        print(station)
 
 if __name__ == "__main__":
     main()
