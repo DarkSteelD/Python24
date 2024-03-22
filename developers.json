@@ -1,0 +1,124 @@
+[
+    [
+        {
+            "ID": 1,
+            "Name": "Василий",
+            "Country": "Россия",
+            "Birth": "1970-12-01",
+            "Salary": 120000,
+            "LastCompany": "Google"
+        },
+        {
+            "ID": 2,
+            "Name": "Кирилл",
+            "Country": "Россия",
+            "Birth": "1998-05-13",
+            "Salary": null,
+            "LastCompany": null
+        },
+        {
+            "ID": 3,
+            "Name": "John",
+            "Country": "Россия",
+            "Birth": "2000-05-13",
+            "Salary": 170000,
+            "LastCompany": "Yandex"
+        },
+        {
+            "ID": 4,
+            "Name": "Василий",
+            "Country": "Россия",
+            "Birth": "1970-12-01",
+            "Salary": 120000,
+            "LastCompany": "Google"
+        },
+        {
+            "ID": 5,
+            "Name": "Кирилл",
+            "Country": "Россия",
+            "Birth": "1998-05-13",
+            "Salary": null,
+            "LastCompany": null
+        },
+        {
+            "ID": 6,
+            "Name": "John",
+            "Country": "Россия",
+            "Birth": "2000-05-13",
+            "Salary": 170000,
+            "LastCompany": "Yandex"
+        },
+        {
+            "ID": 7,
+            "Name": "paramour Vorazun",
+            "Country": "&#1056;&#1086;&#1089;&#1089;&#1080;&#1103;",
+            "Birth": "2002-02-14",
+            "Salary": 33333333,
+            "LastCompany": null
+        }
+    ],
+    [
+        {
+            "ID": 1,
+            "Name": "Docs",
+            "Version": "3.4",
+            "DeveloperID": 1
+        },
+        {
+            "ID": 2,
+            "Name": "Алиса",
+            "Version": "2.1",
+            "DeveloperID": 3
+        },
+        {
+            "ID": 3,
+            "Name": "Docs",
+            "Version": "3.4",
+            "DeveloperID": 1
+        },
+        {
+            "ID": 4,
+            "Name": "Алиса",
+            "Version": "2.1",
+            "DeveloperID": 3
+        },
+        {
+            "ID": 5,
+            "Name": "133",
+            "Version": "13",
+            "DeveloperID": 1
+        },
+        {
+            "ID": 6,
+            "Name": "test",
+            "Version": "12",
+            "DeveloperID": 1
+        }
+    ],
+    [
+        {
+            "ID": 1,
+            "LicenseType": "GPL",
+            "SoftwareID": 1,
+            "ExpiryDate": "2026-12-31"
+        },
+        {
+            "ID": 2,
+            "LicenseType": "BSD",
+            "SoftwareID": 2,
+            "ExpiryDate": "2029-06-30"
+        },
+        {
+            "ID": 3,
+            "LicenseType": "GPL",
+            "SoftwareID": 1,
+            "ExpiryDate": "2026-12-31"
+        },
+        {
+            "ID": 4,
+            "LicenseType": "BSD",
+            "SoftwareID": 2,
+            "ExpiryDate": "2029-06-30"
+        }
+    ]
+]
