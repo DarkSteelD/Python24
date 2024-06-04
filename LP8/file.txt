@@ -1,0 +1,10 @@
+from portfolio.models import Project
+
+project = Project(
+    title='Пример проекта',
+    description='Шаблон Шаблонный, но он нужен мне для теста',
+    technology='Django, Python',
+    image='C:\Users\DarkStell\Documents\GitHub\MyPortfoilioSite\portfolio\images\he.jpg',
+    link='http://example.com'
+)
+project.save()
